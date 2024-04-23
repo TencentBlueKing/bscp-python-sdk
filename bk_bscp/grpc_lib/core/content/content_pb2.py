@@ -15,7 +15,7 @@ _sym_db = _symbol_database.Default()
 from bk_bscp.grpc_lib.core.base import base_pb2 as pkg_dot_protocol_dot_core_dot_base_dot_base__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\'pkg/protocol/core/content/content.proto\x12\tpbcontent\x1a!pkg/protocol/core/base/base.proto\"\x98\x01\n\x07\x43ontent\x12\n\n\x02id\x18\x01 \x01(\r\x12$\n\x04spec\x18\x02 \x01(\x0b\x32\x16.pbcontent.ContentSpec\x12\x30\n\nattachment\x18\x03 \x01(\x0b\x32\x1c.pbcontent.ContentAttachment\x12)\n\x08revision\x18\x04 \x01(\x0b\x32\x17.pbbase.CreatedRevision\"3\n\x0b\x43ontentSpec\x12\x11\n\tsignature\x18\x01 \x01(\t\x12\x11\n\tbyte_size\x18\x02 \x01(\x04\"o\n\x13ReleasedContentSpec\x12\x11\n\tsignature\x18\x01 \x01(\t\x12\x11\n\tbyte_size\x18\x02 \x01(\x04\x12\x18\n\x10origin_signature\x18\x03 \x01(\t\x12\x18\n\x10origin_byte_size\x18\x04 \x01(\x04\"K\n\x11\x43ontentAttachment\x12\x0e\n\x06\x62iz_id\x18\x01 \x01(\r\x12\x0e\n\x06\x61pp_id\x18\x02 \x01(\r\x12\x16\n\x0e\x63onfig_item_id\x18\x03 \x01(\rB]Z[github.com/TencentBlueKing/bk-bcs/bcs-services/bcs-bscp/pkg/protocol/core/content;pbcontentb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\'pkg/protocol/core/content/content.proto\x12\tpbcontent\x1a!pkg/protocol/core/base/base.proto\"\x98\x01\n\x07\x43ontent\x12\n\n\x02id\x18\x01 \x01(\r\x12$\n\x04spec\x18\x02 \x01(\x0b\x32\x16.pbcontent.ContentSpec\x12\x30\n\nattachment\x18\x03 \x01(\x0b\x32\x1c.pbcontent.ContentAttachment\x12)\n\x08revision\x18\x04 \x01(\x0b\x32\x17.pbbase.CreatedRevision\"@\n\x0b\x43ontentSpec\x12\x11\n\tsignature\x18\x01 \x01(\t\x12\x11\n\tbyte_size\x18\x02 \x01(\x04\x12\x0b\n\x03md5\x18\x03 \x01(\t\"|\n\x13ReleasedContentSpec\x12\x11\n\tsignature\x18\x01 \x01(\t\x12\x11\n\tbyte_size\x18\x02 \x01(\x04\x12\x18\n\x10origin_signature\x18\x03 \x01(\t\x12\x18\n\x10origin_byte_size\x18\x04 \x01(\x04\x12\x0b\n\x03md5\x18\x05 \x01(\t\"K\n\x11\x43ontentAttachment\x12\x0e\n\x06\x62iz_id\x18\x01 \x01(\r\x12\x0e\n\x06\x61pp_id\x18\x02 \x01(\r\x12\x16\n\x0e\x63onfig_item_id\x18\x03 \x01(\rB]Z[github.com/TencentBlueKing/bk-bcs/bcs-services/bcs-bscp/pkg/protocol/core/content;pbcontentb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -26,9 +26,9 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _globals['_CONTENT']._serialized_start=90
   _globals['_CONTENT']._serialized_end=242
   _globals['_CONTENTSPEC']._serialized_start=244
-  _globals['_CONTENTSPEC']._serialized_end=295
-  _globals['_RELEASEDCONTENTSPEC']._serialized_start=297
-  _globals['_RELEASEDCONTENTSPEC']._serialized_end=408
-  _globals['_CONTENTATTACHMENT']._serialized_start=410
-  _globals['_CONTENTATTACHMENT']._serialized_end=485
+  _globals['_CONTENTSPEC']._serialized_end=308
+  _globals['_RELEASEDCONTENTSPEC']._serialized_start=310
+  _globals['_RELEASEDCONTENTSPEC']._serialized_end=434
+  _globals['_CONTENTATTACHMENT']._serialized_start=436
+  _globals['_CONTENTATTACHMENT']._serialized_end=511
 # @@protoc_insertion_point(module_scope)

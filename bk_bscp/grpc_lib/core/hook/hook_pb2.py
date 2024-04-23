@@ -15,7 +15,7 @@ _sym_db = _symbol_database.Default()
 from bk_bscp.grpc_lib.core.base import base_pb2 as pkg_dot_protocol_dot_core_dot_base_dot_base__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n!pkg/protocol/core/hook/hook.proto\x12\x06pbhook\x1a!pkg/protocol/core/base/base.proto\"\x82\x01\n\x04Hook\x12\n\n\x02id\x18\x01 \x01(\r\x12\x1e\n\x04spec\x18\x02 \x01(\x0b\x32\x10.pbhook.HookSpec\x12*\n\nattachment\x18\x03 \x01(\x0b\x32\x16.pbhook.HookAttachment\x12\"\n\x08revision\x18\x04 \x01(\x0b\x32\x10.pbbase.Revision\"R\n\x08HookSpec\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0c\n\x04type\x18\x02 \x01(\t\x12\x0b\n\x03tag\x18\x03 \x01(\t\x12\x0c\n\x04memo\x18\x04 \x01(\t\x12\x0f\n\x07\x63ontent\x18\x05 \x01(\t\" \n\x0eHookAttachment\x12\x0e\n\x06\x62iz_id\x18\x01 \x01(\r\"R\n\x11ListHookTagCounts\x12\x0e\n\x06\x61pp_id\x18\x01 \x01(\r\x12\x0b\n\x03tag\x18\x02 \x01(\t\x12\r\n\x05\x63ount\x18\x03 \x01(\r\x12\x11\n\tupdate_at\x18\x04 \x01(\t\",\n\rCountHookTags\x12\x0b\n\x03tag\x18\x01 \x01(\t\x12\x0e\n\x06\x63ounts\x18\x02 \x01(\rBWZUgithub.com/TencentBlueKing/bk-bcs/bcs-services/bcs-bscp/pkg/protocol/core/hook;pbhookb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n!pkg/protocol/core/hook/hook.proto\x12\x06pbhook\x1a!pkg/protocol/core/base/base.proto\"\x82\x01\n\x04Hook\x12\n\n\x02id\x18\x01 \x01(\r\x12\x1e\n\x04spec\x18\x02 \x01(\x0b\x32\x10.pbhook.HookSpec\x12*\n\nattachment\x18\x03 \x01(\x0b\x32\x16.pbhook.HookAttachment\x12\"\n\x08revision\x18\x04 \x01(\x0b\x32\x10.pbbase.Revision\"i\n\x08HookSpec\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0c\n\x04type\x18\x02 \x01(\t\x12\x0b\n\x03tag\x18\x03 \x01(\t\x12\x0c\n\x04memo\x18\x04 \x01(\t\x12\x0f\n\x07\x63ontent\x18\x05 \x01(\t\x12\x15\n\rrevision_name\x18\x06 \x01(\t\" \n\x0eHookAttachment\x12\x0e\n\x06\x62iz_id\x18\x01 \x01(\r\"R\n\x11ListHookTagCounts\x12\x0e\n\x06\x61pp_id\x18\x01 \x01(\r\x12\x0b\n\x03tag\x18\x02 \x01(\t\x12\r\n\x05\x63ount\x18\x03 \x01(\r\x12\x11\n\tupdate_at\x18\x04 \x01(\t\",\n\rCountHookTags\x12\x0b\n\x03tag\x18\x01 \x01(\t\x12\x0e\n\x06\x63ounts\x18\x02 \x01(\rBWZUgithub.com/TencentBlueKing/bk-bcs/bcs-services/bcs-bscp/pkg/protocol/core/hook;pbhookb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -26,11 +26,11 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _globals['_HOOK']._serialized_start=81
   _globals['_HOOK']._serialized_end=211
   _globals['_HOOKSPEC']._serialized_start=213
-  _globals['_HOOKSPEC']._serialized_end=295
-  _globals['_HOOKATTACHMENT']._serialized_start=297
-  _globals['_HOOKATTACHMENT']._serialized_end=329
-  _globals['_LISTHOOKTAGCOUNTS']._serialized_start=331
-  _globals['_LISTHOOKTAGCOUNTS']._serialized_end=413
-  _globals['_COUNTHOOKTAGS']._serialized_start=415
-  _globals['_COUNTHOOKTAGS']._serialized_end=459
+  _globals['_HOOKSPEC']._serialized_end=318
+  _globals['_HOOKATTACHMENT']._serialized_start=320
+  _globals['_HOOKATTACHMENT']._serialized_end=352
+  _globals['_LISTHOOKTAGCOUNTS']._serialized_start=354
+  _globals['_LISTHOOKTAGCOUNTS']._serialized_end=436
+  _globals['_COUNTHOOKTAGS']._serialized_start=438
+  _globals['_COUNTHOOKTAGS']._serialized_end=482
 # @@protoc_insertion_point(module_scope)

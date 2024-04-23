@@ -63,7 +63,7 @@ class AppTemplateBindingAttachment(_message.Message):
 class AppBoundTmplRevisionGroupBySet(_message.Message):
     __slots__ = ("template_space_id", "template_space_name", "template_set_id", "template_set_name", "template_revisions")
     class template_revision_detail(_message.Message):
-        __slots__ = ("template_id", "name", "path", "template_revision_id", "is_latest", "template_revision_name", "template_revision_memo", "file_type", "file_mode", "user", "user_group", "privilege", "signature", "byte_size", "creator", "create_at", "file_state")
+        __slots__ = ("template_id", "name", "path", "template_revision_id", "is_latest", "template_revision_name", "template_revision_memo", "file_type", "file_mode", "user", "user_group", "privilege", "signature", "byte_size", "creator", "create_at", "file_state", "md5")
         TEMPLATE_ID_FIELD_NUMBER: _ClassVar[int]
         NAME_FIELD_NUMBER: _ClassVar[int]
         PATH_FIELD_NUMBER: _ClassVar[int]
@@ -81,6 +81,7 @@ class AppBoundTmplRevisionGroupBySet(_message.Message):
         CREATOR_FIELD_NUMBER: _ClassVar[int]
         CREATE_AT_FIELD_NUMBER: _ClassVar[int]
         FILE_STATE_FIELD_NUMBER: _ClassVar[int]
+        MD5_FIELD_NUMBER: _ClassVar[int]
         template_id: int
         name: str
         path: str
@@ -98,7 +99,8 @@ class AppBoundTmplRevisionGroupBySet(_message.Message):
         creator: str
         create_at: str
         file_state: str
-        def __init__(self, template_id: _Optional[int] = ..., name: _Optional[str] = ..., path: _Optional[str] = ..., template_revision_id: _Optional[int] = ..., is_latest: bool = ..., template_revision_name: _Optional[str] = ..., template_revision_memo: _Optional[str] = ..., file_type: _Optional[str] = ..., file_mode: _Optional[str] = ..., user: _Optional[str] = ..., user_group: _Optional[str] = ..., privilege: _Optional[str] = ..., signature: _Optional[str] = ..., byte_size: _Optional[int] = ..., creator: _Optional[str] = ..., create_at: _Optional[str] = ..., file_state: _Optional[str] = ...) -> None: ...
+        md5: str
+        def __init__(self, template_id: _Optional[int] = ..., name: _Optional[str] = ..., path: _Optional[str] = ..., template_revision_id: _Optional[int] = ..., is_latest: bool = ..., template_revision_name: _Optional[str] = ..., template_revision_memo: _Optional[str] = ..., file_type: _Optional[str] = ..., file_mode: _Optional[str] = ..., user: _Optional[str] = ..., user_group: _Optional[str] = ..., privilege: _Optional[str] = ..., signature: _Optional[str] = ..., byte_size: _Optional[int] = ..., creator: _Optional[str] = ..., create_at: _Optional[str] = ..., file_state: _Optional[str] = ..., md5: _Optional[str] = ...) -> None: ...
     TEMPLATE_SPACE_ID_FIELD_NUMBER: _ClassVar[int]
     TEMPLATE_SPACE_NAME_FIELD_NUMBER: _ClassVar[int]
     TEMPLATE_SET_ID_FIELD_NUMBER: _ClassVar[int]
@@ -114,7 +116,7 @@ class AppBoundTmplRevisionGroupBySet(_message.Message):
 class ReleasedAppBoundTmplRevisionGroupBySet(_message.Message):
     __slots__ = ("template_space_id", "template_space_name", "template_set_id", "template_set_name", "template_revisions")
     class template_revision_detail(_message.Message):
-        __slots__ = ("template_id", "name", "path", "template_revision_id", "is_latest", "template_revision_name", "template_revision_memo", "file_type", "file_mode", "user", "user_group", "privilege", "signature", "byte_size", "origin_signature", "origin_byte_size", "creator", "reviser", "create_at", "update_at")
+        __slots__ = ("template_id", "name", "path", "template_revision_id", "is_latest", "template_revision_name", "template_revision_memo", "file_type", "file_mode", "user", "user_group", "privilege", "signature", "byte_size", "origin_signature", "origin_byte_size", "creator", "reviser", "create_at", "update_at", "md5")
         TEMPLATE_ID_FIELD_NUMBER: _ClassVar[int]
         NAME_FIELD_NUMBER: _ClassVar[int]
         PATH_FIELD_NUMBER: _ClassVar[int]
@@ -135,6 +137,7 @@ class ReleasedAppBoundTmplRevisionGroupBySet(_message.Message):
         REVISER_FIELD_NUMBER: _ClassVar[int]
         CREATE_AT_FIELD_NUMBER: _ClassVar[int]
         UPDATE_AT_FIELD_NUMBER: _ClassVar[int]
+        MD5_FIELD_NUMBER: _ClassVar[int]
         template_id: int
         name: str
         path: str
@@ -155,7 +158,8 @@ class ReleasedAppBoundTmplRevisionGroupBySet(_message.Message):
         reviser: str
         create_at: str
         update_at: str
-        def __init__(self, template_id: _Optional[int] = ..., name: _Optional[str] = ..., path: _Optional[str] = ..., template_revision_id: _Optional[int] = ..., is_latest: bool = ..., template_revision_name: _Optional[str] = ..., template_revision_memo: _Optional[str] = ..., file_type: _Optional[str] = ..., file_mode: _Optional[str] = ..., user: _Optional[str] = ..., user_group: _Optional[str] = ..., privilege: _Optional[str] = ..., signature: _Optional[str] = ..., byte_size: _Optional[int] = ..., origin_signature: _Optional[str] = ..., origin_byte_size: _Optional[int] = ..., creator: _Optional[str] = ..., reviser: _Optional[str] = ..., create_at: _Optional[str] = ..., update_at: _Optional[str] = ...) -> None: ...
+        md5: str
+        def __init__(self, template_id: _Optional[int] = ..., name: _Optional[str] = ..., path: _Optional[str] = ..., template_revision_id: _Optional[int] = ..., is_latest: bool = ..., template_revision_name: _Optional[str] = ..., template_revision_memo: _Optional[str] = ..., file_type: _Optional[str] = ..., file_mode: _Optional[str] = ..., user: _Optional[str] = ..., user_group: _Optional[str] = ..., privilege: _Optional[str] = ..., signature: _Optional[str] = ..., byte_size: _Optional[int] = ..., origin_signature: _Optional[str] = ..., origin_byte_size: _Optional[int] = ..., creator: _Optional[str] = ..., reviser: _Optional[str] = ..., create_at: _Optional[str] = ..., update_at: _Optional[str] = ..., md5: _Optional[str] = ...) -> None: ...
     TEMPLATE_SPACE_ID_FIELD_NUMBER: _ClassVar[int]
     TEMPLATE_SPACE_NAME_FIELD_NUMBER: _ClassVar[int]
     TEMPLATE_SET_ID_FIELD_NUMBER: _ClassVar[int]
@@ -169,7 +173,7 @@ class ReleasedAppBoundTmplRevisionGroupBySet(_message.Message):
     def __init__(self, template_space_id: _Optional[int] = ..., template_space_name: _Optional[str] = ..., template_set_id: _Optional[int] = ..., template_set_name: _Optional[str] = ..., template_revisions: _Optional[_Iterable[_Union[ReleasedAppBoundTmplRevisionGroupBySet.template_revision_detail, _Mapping]]] = ...) -> None: ...
 
 class AppBoundTmplRevision(_message.Message):
-    __slots__ = ("template_space_id", "template_space_name", "template_set_id", "template_set_name", "template_id", "name", "path", "template_revision_id", "is_latest", "template_revision_name", "template_revision_memo", "file_type", "file_mode", "user", "user_group", "privilege", "signature", "byte_size", "creator", "create_at", "file_state")
+    __slots__ = ("template_space_id", "template_space_name", "template_set_id", "template_set_name", "template_id", "name", "path", "template_revision_id", "is_latest", "template_revision_name", "template_revision_memo", "file_type", "file_mode", "user", "user_group", "privilege", "signature", "byte_size", "creator", "create_at", "file_state", "md5")
     TEMPLATE_SPACE_ID_FIELD_NUMBER: _ClassVar[int]
     TEMPLATE_SPACE_NAME_FIELD_NUMBER: _ClassVar[int]
     TEMPLATE_SET_ID_FIELD_NUMBER: _ClassVar[int]
@@ -191,6 +195,7 @@ class AppBoundTmplRevision(_message.Message):
     CREATOR_FIELD_NUMBER: _ClassVar[int]
     CREATE_AT_FIELD_NUMBER: _ClassVar[int]
     FILE_STATE_FIELD_NUMBER: _ClassVar[int]
+    MD5_FIELD_NUMBER: _ClassVar[int]
     template_space_id: int
     template_space_name: str
     template_set_id: int
@@ -212,10 +217,11 @@ class AppBoundTmplRevision(_message.Message):
     creator: str
     create_at: str
     file_state: str
-    def __init__(self, template_space_id: _Optional[int] = ..., template_space_name: _Optional[str] = ..., template_set_id: _Optional[int] = ..., template_set_name: _Optional[str] = ..., template_id: _Optional[int] = ..., name: _Optional[str] = ..., path: _Optional[str] = ..., template_revision_id: _Optional[int] = ..., is_latest: bool = ..., template_revision_name: _Optional[str] = ..., template_revision_memo: _Optional[str] = ..., file_type: _Optional[str] = ..., file_mode: _Optional[str] = ..., user: _Optional[str] = ..., user_group: _Optional[str] = ..., privilege: _Optional[str] = ..., signature: _Optional[str] = ..., byte_size: _Optional[int] = ..., creator: _Optional[str] = ..., create_at: _Optional[str] = ..., file_state: _Optional[str] = ...) -> None: ...
+    md5: str
+    def __init__(self, template_space_id: _Optional[int] = ..., template_space_name: _Optional[str] = ..., template_set_id: _Optional[int] = ..., template_set_name: _Optional[str] = ..., template_id: _Optional[int] = ..., name: _Optional[str] = ..., path: _Optional[str] = ..., template_revision_id: _Optional[int] = ..., is_latest: bool = ..., template_revision_name: _Optional[str] = ..., template_revision_memo: _Optional[str] = ..., file_type: _Optional[str] = ..., file_mode: _Optional[str] = ..., user: _Optional[str] = ..., user_group: _Optional[str] = ..., privilege: _Optional[str] = ..., signature: _Optional[str] = ..., byte_size: _Optional[int] = ..., creator: _Optional[str] = ..., create_at: _Optional[str] = ..., file_state: _Optional[str] = ..., md5: _Optional[str] = ...) -> None: ...
 
 class ReleasedAppBoundTmplRevision(_message.Message):
-    __slots__ = ("template_space_id", "template_space_name", "template_set_id", "template_set_name", "template_id", "name", "path", "template_revision_id", "is_latest", "template_revision_name", "template_revision_memo", "file_type", "file_mode", "user", "user_group", "privilege", "signature", "byte_size", "origin_signature", "origin_byte_size", "creator", "reviser", "create_at", "update_at")
+    __slots__ = ("template_space_id", "template_space_name", "template_set_id", "template_set_name", "template_id", "name", "path", "template_revision_id", "is_latest", "template_revision_name", "template_revision_memo", "file_type", "file_mode", "user", "user_group", "privilege", "signature", "byte_size", "origin_signature", "origin_byte_size", "creator", "reviser", "create_at", "update_at", "md5")
     TEMPLATE_SPACE_ID_FIELD_NUMBER: _ClassVar[int]
     TEMPLATE_SPACE_NAME_FIELD_NUMBER: _ClassVar[int]
     TEMPLATE_SET_ID_FIELD_NUMBER: _ClassVar[int]
@@ -240,6 +246,7 @@ class ReleasedAppBoundTmplRevision(_message.Message):
     REVISER_FIELD_NUMBER: _ClassVar[int]
     CREATE_AT_FIELD_NUMBER: _ClassVar[int]
     UPDATE_AT_FIELD_NUMBER: _ClassVar[int]
+    MD5_FIELD_NUMBER: _ClassVar[int]
     template_space_id: int
     template_space_name: str
     template_set_id: int
@@ -264,7 +271,8 @@ class ReleasedAppBoundTmplRevision(_message.Message):
     reviser: str
     create_at: str
     update_at: str
-    def __init__(self, template_space_id: _Optional[int] = ..., template_space_name: _Optional[str] = ..., template_set_id: _Optional[int] = ..., template_set_name: _Optional[str] = ..., template_id: _Optional[int] = ..., name: _Optional[str] = ..., path: _Optional[str] = ..., template_revision_id: _Optional[int] = ..., is_latest: bool = ..., template_revision_name: _Optional[str] = ..., template_revision_memo: _Optional[str] = ..., file_type: _Optional[str] = ..., file_mode: _Optional[str] = ..., user: _Optional[str] = ..., user_group: _Optional[str] = ..., privilege: _Optional[str] = ..., signature: _Optional[str] = ..., byte_size: _Optional[int] = ..., origin_signature: _Optional[str] = ..., origin_byte_size: _Optional[int] = ..., creator: _Optional[str] = ..., reviser: _Optional[str] = ..., create_at: _Optional[str] = ..., update_at: _Optional[str] = ...) -> None: ...
+    md5: str
+    def __init__(self, template_space_id: _Optional[int] = ..., template_space_name: _Optional[str] = ..., template_set_id: _Optional[int] = ..., template_set_name: _Optional[str] = ..., template_id: _Optional[int] = ..., name: _Optional[str] = ..., path: _Optional[str] = ..., template_revision_id: _Optional[int] = ..., is_latest: bool = ..., template_revision_name: _Optional[str] = ..., template_revision_memo: _Optional[str] = ..., file_type: _Optional[str] = ..., file_mode: _Optional[str] = ..., user: _Optional[str] = ..., user_group: _Optional[str] = ..., privilege: _Optional[str] = ..., signature: _Optional[str] = ..., byte_size: _Optional[int] = ..., origin_signature: _Optional[str] = ..., origin_byte_size: _Optional[int] = ..., creator: _Optional[str] = ..., reviser: _Optional[str] = ..., create_at: _Optional[str] = ..., update_at: _Optional[str] = ..., md5: _Optional[str] = ...) -> None: ...
 
 class Conflict(_message.Message):
     __slots__ = ("template_set_id", "template_set_name", "template_id", "template_name")

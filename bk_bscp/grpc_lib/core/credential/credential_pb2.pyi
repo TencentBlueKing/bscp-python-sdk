@@ -1,21 +1,24 @@
 from bk_bscp.grpc_lib.core.base import base_pb2 as _base_pb2
+from google.protobuf.internal import containers as _containers
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
-from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Optional, Union as _Union
+from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Mapping, Optional as _Optional, Union as _Union
 
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class CredentialList(_message.Message):
-    __slots__ = ("id", "spec", "attachment", "revision")
+    __slots__ = ("id", "spec", "attachment", "revision", "credential_scopes")
     ID_FIELD_NUMBER: _ClassVar[int]
     SPEC_FIELD_NUMBER: _ClassVar[int]
     ATTACHMENT_FIELD_NUMBER: _ClassVar[int]
     REVISION_FIELD_NUMBER: _ClassVar[int]
+    CREDENTIAL_SCOPES_FIELD_NUMBER: _ClassVar[int]
     id: int
     spec: CredentialSpec
     attachment: CredentialAttachment
     revision: _base_pb2.Revision
-    def __init__(self, id: _Optional[int] = ..., spec: _Optional[_Union[CredentialSpec, _Mapping]] = ..., attachment: _Optional[_Union[CredentialAttachment, _Mapping]] = ..., revision: _Optional[_Union[_base_pb2.Revision, _Mapping]] = ...) -> None: ...
+    credential_scopes: _containers.RepeatedScalarFieldContainer[str]
+    def __init__(self, id: _Optional[int] = ..., spec: _Optional[_Union[CredentialSpec, _Mapping]] = ..., attachment: _Optional[_Union[CredentialAttachment, _Mapping]] = ..., revision: _Optional[_Union[_base_pb2.Revision, _Mapping]] = ..., credential_scopes: _Optional[_Iterable[str]] = ...) -> None: ...
 
 class CredentialSpec(_message.Message):
     __slots__ = ("credential_type", "enc_credential", "enc_algorithm", "name", "memo", "enable")

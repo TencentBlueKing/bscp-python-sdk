@@ -17,9 +17,10 @@ from bk_bscp.grpc_lib.core.commit import commit_pb2 as pkg_dot_protocol_dot_core
 from bk_bscp.grpc_lib.core.config_item import config_item_pb2 as pkg_dot_protocol_dot_core_dot_config__item_dot_config__item__pb2
 from bk_bscp.grpc_lib.core.hook import hook_pb2 as pkg_dot_protocol_dot_core_dot_hook_dot_hook__pb2
 from bk_bscp.grpc_lib.core.kv import kvs_pb2 as pkg_dot_protocol_dot_core_dot_kv_dot_kvs__pb2
+from bk_bscp.grpc_lib.core.content import content_pb2 as pkg_dot_protocol_dot_core_dot_content_dot_content__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n*pkg/protocol/feed-server/feed_server.proto\x12\x04pbfs\x1a!pkg/protocol/core/base/base.proto\x1a%pkg/protocol/core/commit/commit.proto\x1a/pkg/protocol/core/config-item/config_item.proto\x1a!pkg/protocol/core/hook/hook.proto\x1a\x1epkg/protocol/core/kv/kvs.proto\"B\n\x0bSidecarSpec\x12\x0e\n\x06\x62iz_id\x18\x01 \x01(\r\x12#\n\x07version\x18\x02 \x01(\x0b\x32\x12.pbbase.Versioning\"\\\n\x10HandshakeMessage\x12\'\n\x0b\x61pi_version\x18\x01 \x01(\x0b\x32\x12.pbbase.Versioning\x12\x1f\n\x04spec\x18\x02 \x01(\x0b\x32\x11.pbfs.SidecarSpec\"I\n\rHandshakeResp\x12\'\n\x0b\x61pi_version\x18\x01 \x01(\x0b\x32\x12.pbbase.Versioning\x12\x0f\n\x07payload\x18\x02 \x01(\x0c\"d\n\rMessagingMeta\x12\'\n\x0b\x61pi_version\x18\x01 \x01(\x0b\x32\x12.pbbase.Versioning\x12\x0b\n\x03rid\x18\x02 \x01(\t\x12\x0c\n\x04type\x18\x03 \x01(\r\x12\x0f\n\x07payload\x18\x04 \x01(\x0c\"\x0f\n\rMessagingResp\"I\n\rSideWatchMeta\x12\'\n\x0b\x61pi_version\x18\x01 \x01(\x0b\x32\x12.pbbase.Versioning\x12\x0f\n\x07payload\x18\x02 \x01(\x0c\"g\n\x10\x46\x65\x65\x64WatchMessage\x12\'\n\x0b\x61pi_version\x18\x01 \x01(\x0b\x32\x12.pbbase.Versioning\x12\x0b\n\x03rid\x18\x02 \x01(\t\x12\x0c\n\x04type\x18\x03 \x01(\r\x12\x0f\n\x07payload\x18\x04 \x01(\x0c\"}\n\x07\x41ppMeta\x12\x0b\n\x03\x61pp\x18\x01 \x01(\t\x12\x0b\n\x03uid\x18\x02 \x01(\t\x12)\n\x06labels\x18\x03 \x03(\x0b\x32\x19.pbfs.AppMeta.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x1a\n\nRepository\x12\x0c\n\x04root\x18\x01 \x01(\t\"\x1e\n\x0eRepositorySpec\x12\x0c\n\x04path\x18\x01 \x01(\t\"\xef\x01\n\x08\x46ileMeta\x12\n\n\x02id\x18\x01 \x01(\r\x12\x11\n\tcommit_id\x18\x02 \x01(\r\x12)\n\x0b\x63ommit_spec\x18\x03 \x01(\x0b\x32\x14.pbcommit.CommitSpec\x12.\n\x10\x63onfig_item_spec\x18\x04 \x01(\x0b\x32\x14.pbci.ConfigItemSpec\x12:\n\x16\x63onfig_item_attachment\x18\x05 \x01(\x0b\x32\x1a.pbci.ConfigItemAttachment\x12-\n\x0frepository_spec\x18\x06 \x01(\x0b\x32\x14.pbfs.RepositorySpec\"\x8a\x01\n\x12PullAppFileMetaReq\x12\'\n\x0b\x61pi_version\x18\x01 \x01(\x0b\x32\x12.pbbase.Versioning\x12\x0e\n\x06\x62iz_id\x18\x02 \x01(\r\x12\x1f\n\x08\x61pp_meta\x18\x03 \x01(\x0b\x32\r.pbfs.AppMeta\x12\r\n\x05token\x18\x04 \x01(\t\x12\x0b\n\x03key\x18\x05 \x01(\t\"\xbc\x01\n\x13PullAppFileMetaResp\x12\x12\n\nrelease_id\x18\x01 \x01(\r\x12$\n\nrepository\x18\x02 \x01(\x0b\x32\x10.pbfs.Repository\x12\"\n\nfile_metas\x18\x03 \x03(\x0b\x32\x0e.pbfs.FileMeta\x12\"\n\x08pre_hook\x18\x04 \x01(\x0b\x32\x10.pbhook.HookSpec\x12#\n\tpost_hook\x18\x05 \x01(\x0b\x32\x10.pbhook.HookSpec\"~\n\x11GetDownloadURLReq\x12\'\n\x0b\x61pi_version\x18\x01 \x01(\x0b\x32\x12.pbbase.Versioning\x12\x0e\n\x06\x62iz_id\x18\x02 \x01(\r\x12!\n\tfile_meta\x18\x03 \x01(\x0b\x32\x0e.pbfs.FileMeta\x12\r\n\x05token\x18\x04 \x01(\t\"!\n\x12GetDownloadURLResp\x12\x0b\n\x03url\x18\x01 \x01(\t\"X\n\x03\x41pp\x12\n\n\x02id\x18\x01 \x01(\r\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x13\n\x0b\x63onfig_type\x18\x03 \x01(\t\x12\"\n\x08revision\x18\x04 \x01(\x0b\x32\x10.pbbase.Revision\",\n\x0bListAppsReq\x12\x0e\n\x06\x62iz_id\x18\x01 \x01(\r\x12\r\n\x05match\x18\x02 \x03(\t\"\'\n\x0cListAppsResp\x12\x17\n\x04\x61pps\x18\x01 \x03(\x0b\x32\t.pbfs.App\"O\n\rPullKvMetaReq\x12\x0e\n\x06\x62iz_id\x18\x01 \x01(\r\x12\x1f\n\x08\x61pp_meta\x18\x02 \x01(\x0b\x32\r.pbfs.AppMeta\x12\r\n\x05match\x18\x03 \x03(\t\"D\n\x0ePullKvMetaResp\x12\x12\n\nrelease_id\x18\x01 \x01(\r\x12\x1e\n\x08kv_metas\x18\x03 \x03(\x0b\x32\x0c.pbfs.KvMeta\"u\n\x06KvMeta\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x0f\n\x07kv_type\x18\x02 \x01(\t\x12\"\n\x08revision\x18\x03 \x01(\x0b\x32\x10.pbbase.Revision\x12)\n\rkv_attachment\x18\x04 \x01(\x0b\x32\x12.pbkv.KvAttachment\"M\n\rGetKvValueReq\x12\x0e\n\x06\x62iz_id\x18\x01 \x01(\r\x12\x1f\n\x08\x61pp_meta\x18\x02 \x01(\x0b\x32\r.pbfs.AppMeta\x12\x0b\n\x03key\x18\x03 \x01(\t\"0\n\x0eGetKvValueResp\x12\x0f\n\x07kv_type\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t2\xf5\x03\n\x08Upstream\x12:\n\tHandshake\x12\x16.pbfs.HandshakeMessage\x1a\x13.pbfs.HandshakeResp\"\x00\x12\x37\n\tMessaging\x12\x13.pbfs.MessagingMeta\x1a\x13.pbfs.MessagingResp\"\x00\x12\x38\n\x05Watch\x12\x13.pbfs.SideWatchMeta\x1a\x16.pbfs.FeedWatchMessage\"\x00\x30\x01\x12H\n\x0fPullAppFileMeta\x12\x18.pbfs.PullAppFileMetaReq\x1a\x19.pbfs.PullAppFileMetaResp\"\x00\x12\x45\n\x0eGetDownloadURL\x12\x17.pbfs.GetDownloadURLReq\x1a\x18.pbfs.GetDownloadURLResp\"\x00\x12\x39\n\nPullKvMeta\x12\x13.pbfs.PullKvMetaReq\x1a\x14.pbfs.PullKvMetaResp\"\x00\x12\x39\n\nGetKvValue\x12\x13.pbfs.GetKvValueReq\x1a\x14.pbfs.GetKvValueResp\"\x00\x12\x33\n\x08ListApps\x12\x11.pbfs.ListAppsReq\x1a\x12.pbfs.ListAppsResp\"\x00\x42WZUgithub.com/TencentBlueKing/bk-bcs/bcs-services/bcs-bscp/pkg/protocol/feed-server;pbfsb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n*pkg/protocol/feed-server/feed_server.proto\x12\x04pbfs\x1a!pkg/protocol/core/base/base.proto\x1a%pkg/protocol/core/commit/commit.proto\x1a/pkg/protocol/core/config-item/config_item.proto\x1a!pkg/protocol/core/hook/hook.proto\x1a\x1epkg/protocol/core/kv/kvs.proto\x1a\'pkg/protocol/core/content/content.proto\"B\n\x0bSidecarSpec\x12\x0e\n\x06\x62iz_id\x18\x01 \x01(\r\x12#\n\x07version\x18\x02 \x01(\x0b\x32\x12.pbbase.Versioning\"\\\n\x10HandshakeMessage\x12\'\n\x0b\x61pi_version\x18\x01 \x01(\x0b\x32\x12.pbbase.Versioning\x12\x1f\n\x04spec\x18\x02 \x01(\x0b\x32\x11.pbfs.SidecarSpec\"I\n\rHandshakeResp\x12\'\n\x0b\x61pi_version\x18\x01 \x01(\x0b\x32\x12.pbbase.Versioning\x12\x0f\n\x07payload\x18\x02 \x01(\x0c\"d\n\rMessagingMeta\x12\'\n\x0b\x61pi_version\x18\x01 \x01(\x0b\x32\x12.pbbase.Versioning\x12\x0b\n\x03rid\x18\x02 \x01(\t\x12\x0c\n\x04type\x18\x03 \x01(\r\x12\x0f\n\x07payload\x18\x04 \x01(\x0c\"\x0f\n\rMessagingResp\"I\n\rSideWatchMeta\x12\'\n\x0b\x61pi_version\x18\x01 \x01(\x0b\x32\x12.pbbase.Versioning\x12\x0f\n\x07payload\x18\x02 \x01(\x0c\"g\n\x10\x46\x65\x65\x64WatchMessage\x12\'\n\x0b\x61pi_version\x18\x01 \x01(\x0b\x32\x12.pbbase.Versioning\x12\x0b\n\x03rid\x18\x02 \x01(\t\x12\x0c\n\x04type\x18\x03 \x01(\r\x12\x0f\n\x07payload\x18\x04 \x01(\x0c\"}\n\x07\x41ppMeta\x12\x0b\n\x03\x61pp\x18\x01 \x01(\t\x12\x0b\n\x03uid\x18\x02 \x01(\t\x12)\n\x06labels\x18\x03 \x03(\x0b\x32\x19.pbfs.AppMeta.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x1a\n\nRepository\x12\x0c\n\x04root\x18\x01 \x01(\t\"\x1e\n\x0eRepositorySpec\x12\x0c\n\x04path\x18\x01 \x01(\t\"\x9f\x02\n\x08\x46ileMeta\x12\n\n\x02id\x18\x01 \x01(\r\x12\x11\n\tcommit_id\x18\x02 \x01(\r\x12)\n\x0b\x63ommit_spec\x18\x03 \x01(\x0b\x32\x14.pbcommit.CommitSpec\x12.\n\x10\x63onfig_item_spec\x18\x04 \x01(\x0b\x32\x14.pbci.ConfigItemSpec\x12:\n\x16\x63onfig_item_attachment\x18\x05 \x01(\x0b\x32\x1a.pbci.ConfigItemAttachment\x12-\n\x0frepository_spec\x18\x06 \x01(\x0b\x32\x14.pbfs.RepositorySpec\x12.\n\x14\x63onfig_item_revision\x18\x07 \x01(\x0b\x32\x10.pbbase.Revision\"\x8a\x01\n\x12PullAppFileMetaReq\x12\'\n\x0b\x61pi_version\x18\x01 \x01(\x0b\x32\x12.pbbase.Versioning\x12\x0e\n\x06\x62iz_id\x18\x02 \x01(\r\x12\x1f\n\x08\x61pp_meta\x18\x03 \x01(\x0b\x32\r.pbfs.AppMeta\x12\r\n\x05token\x18\x04 \x01(\t\x12\x0b\n\x03key\x18\x05 \x01(\t\"\xd2\x01\n\x13PullAppFileMetaResp\x12\x12\n\nrelease_id\x18\x01 \x01(\r\x12\x14\n\x0crelease_name\x18\x06 \x01(\t\x12$\n\nrepository\x18\x02 \x01(\x0b\x32\x10.pbfs.Repository\x12\"\n\nfile_metas\x18\x03 \x03(\x0b\x32\x0e.pbfs.FileMeta\x12\"\n\x08pre_hook\x18\x04 \x01(\x0b\x32\x10.pbhook.HookSpec\x12#\n\tpost_hook\x18\x05 \x01(\x0b\x32\x10.pbhook.HookSpec\"~\n\x11GetDownloadURLReq\x12\'\n\x0b\x61pi_version\x18\x01 \x01(\x0b\x32\x12.pbbase.Versioning\x12\x0e\n\x06\x62iz_id\x18\x02 \x01(\r\x12!\n\tfile_meta\x18\x03 \x01(\x0b\x32\x0e.pbfs.FileMeta\x12\r\n\x05token\x18\x04 \x01(\t\"!\n\x12GetDownloadURLResp\x12\x0b\n\x03url\x18\x01 \x01(\t\"X\n\x03\x41pp\x12\n\n\x02id\x18\x01 \x01(\r\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x13\n\x0b\x63onfig_type\x18\x03 \x01(\t\x12\"\n\x08revision\x18\x04 \x01(\x0b\x32\x10.pbbase.Revision\",\n\x0bListAppsReq\x12\x0e\n\x06\x62iz_id\x18\x01 \x01(\r\x12\r\n\x05match\x18\x02 \x03(\t\"\'\n\x0cListAppsResp\x12\x17\n\x04\x61pps\x18\x01 \x03(\x0b\x32\t.pbfs.App\"O\n\rPullKvMetaReq\x12\x0e\n\x06\x62iz_id\x18\x01 \x01(\r\x12\x1f\n\x08\x61pp_meta\x18\x02 \x01(\x0b\x32\r.pbfs.AppMeta\x12\r\n\x05match\x18\x03 \x03(\t\"D\n\x0ePullKvMetaResp\x12\x12\n\nrelease_id\x18\x01 \x01(\r\x12\x1e\n\x08kv_metas\x18\x03 \x03(\x0b\x32\x0c.pbfs.KvMeta\"\xa3\x01\n\x06KvMeta\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x0f\n\x07kv_type\x18\x02 \x01(\t\x12\"\n\x08revision\x18\x03 \x01(\x0b\x32\x10.pbbase.Revision\x12)\n\rkv_attachment\x18\x04 \x01(\x0b\x32\x12.pbkv.KvAttachment\x12,\n\x0c\x63ontent_spec\x18\x05 \x01(\x0b\x32\x16.pbcontent.ContentSpec\"M\n\rGetKvValueReq\x12\x0e\n\x06\x62iz_id\x18\x01 \x01(\r\x12\x1f\n\x08\x61pp_meta\x18\x02 \x01(\x0b\x32\r.pbfs.AppMeta\x12\x0b\n\x03key\x18\x03 \x01(\t\"0\n\x0eGetKvValueResp\x12\x0f\n\x07kv_type\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t2\xf5\x03\n\x08Upstream\x12:\n\tHandshake\x12\x16.pbfs.HandshakeMessage\x1a\x13.pbfs.HandshakeResp\"\x00\x12\x37\n\tMessaging\x12\x13.pbfs.MessagingMeta\x1a\x13.pbfs.MessagingResp\"\x00\x12\x38\n\x05Watch\x12\x13.pbfs.SideWatchMeta\x1a\x16.pbfs.FeedWatchMessage\"\x00\x30\x01\x12H\n\x0fPullAppFileMeta\x12\x18.pbfs.PullAppFileMetaReq\x1a\x19.pbfs.PullAppFileMetaResp\"\x00\x12\x45\n\x0eGetDownloadURL\x12\x17.pbfs.GetDownloadURLReq\x1a\x18.pbfs.GetDownloadURLResp\"\x00\x12\x39\n\nPullKvMeta\x12\x13.pbfs.PullKvMetaReq\x1a\x14.pbfs.PullKvMetaResp\"\x00\x12\x39\n\nGetKvValue\x12\x13.pbfs.GetKvValueReq\x1a\x14.pbfs.GetKvValueResp\"\x00\x12\x33\n\x08ListApps\x12\x11.pbfs.ListAppsReq\x1a\x12.pbfs.ListAppsResp\"\x00\x42WZUgithub.com/TencentBlueKing/bk-bcs/bcs-services/bcs-bscp/pkg/protocol/feed-server;pbfsb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -29,54 +30,54 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _globals['DESCRIPTOR']._serialized_options = b'ZUgithub.com/TencentBlueKing/bk-bcs/bcs-services/bcs-bscp/pkg/protocol/feed-server;pbfs'
   _globals['_APPMETA_LABELSENTRY']._options = None
   _globals['_APPMETA_LABELSENTRY']._serialized_options = b'8\001'
-  _globals['_SIDECARSPEC']._serialized_start=242
-  _globals['_SIDECARSPEC']._serialized_end=308
-  _globals['_HANDSHAKEMESSAGE']._serialized_start=310
-  _globals['_HANDSHAKEMESSAGE']._serialized_end=402
-  _globals['_HANDSHAKERESP']._serialized_start=404
-  _globals['_HANDSHAKERESP']._serialized_end=477
-  _globals['_MESSAGINGMETA']._serialized_start=479
-  _globals['_MESSAGINGMETA']._serialized_end=579
-  _globals['_MESSAGINGRESP']._serialized_start=581
-  _globals['_MESSAGINGRESP']._serialized_end=596
-  _globals['_SIDEWATCHMETA']._serialized_start=598
-  _globals['_SIDEWATCHMETA']._serialized_end=671
-  _globals['_FEEDWATCHMESSAGE']._serialized_start=673
-  _globals['_FEEDWATCHMESSAGE']._serialized_end=776
-  _globals['_APPMETA']._serialized_start=778
-  _globals['_APPMETA']._serialized_end=903
-  _globals['_APPMETA_LABELSENTRY']._serialized_start=858
-  _globals['_APPMETA_LABELSENTRY']._serialized_end=903
-  _globals['_REPOSITORY']._serialized_start=905
-  _globals['_REPOSITORY']._serialized_end=931
-  _globals['_REPOSITORYSPEC']._serialized_start=933
-  _globals['_REPOSITORYSPEC']._serialized_end=963
-  _globals['_FILEMETA']._serialized_start=966
-  _globals['_FILEMETA']._serialized_end=1205
-  _globals['_PULLAPPFILEMETAREQ']._serialized_start=1208
-  _globals['_PULLAPPFILEMETAREQ']._serialized_end=1346
-  _globals['_PULLAPPFILEMETARESP']._serialized_start=1349
-  _globals['_PULLAPPFILEMETARESP']._serialized_end=1537
-  _globals['_GETDOWNLOADURLREQ']._serialized_start=1539
-  _globals['_GETDOWNLOADURLREQ']._serialized_end=1665
-  _globals['_GETDOWNLOADURLRESP']._serialized_start=1667
-  _globals['_GETDOWNLOADURLRESP']._serialized_end=1700
-  _globals['_APP']._serialized_start=1702
-  _globals['_APP']._serialized_end=1790
-  _globals['_LISTAPPSREQ']._serialized_start=1792
-  _globals['_LISTAPPSREQ']._serialized_end=1836
-  _globals['_LISTAPPSRESP']._serialized_start=1838
-  _globals['_LISTAPPSRESP']._serialized_end=1877
-  _globals['_PULLKVMETAREQ']._serialized_start=1879
-  _globals['_PULLKVMETAREQ']._serialized_end=1958
-  _globals['_PULLKVMETARESP']._serialized_start=1960
-  _globals['_PULLKVMETARESP']._serialized_end=2028
-  _globals['_KVMETA']._serialized_start=2030
-  _globals['_KVMETA']._serialized_end=2147
-  _globals['_GETKVVALUEREQ']._serialized_start=2149
-  _globals['_GETKVVALUEREQ']._serialized_end=2226
-  _globals['_GETKVVALUERESP']._serialized_start=2228
-  _globals['_GETKVVALUERESP']._serialized_end=2276
-  _globals['_UPSTREAM']._serialized_start=2279
-  _globals['_UPSTREAM']._serialized_end=2780
+  _globals['_SIDECARSPEC']._serialized_start=283
+  _globals['_SIDECARSPEC']._serialized_end=349
+  _globals['_HANDSHAKEMESSAGE']._serialized_start=351
+  _globals['_HANDSHAKEMESSAGE']._serialized_end=443
+  _globals['_HANDSHAKERESP']._serialized_start=445
+  _globals['_HANDSHAKERESP']._serialized_end=518
+  _globals['_MESSAGINGMETA']._serialized_start=520
+  _globals['_MESSAGINGMETA']._serialized_end=620
+  _globals['_MESSAGINGRESP']._serialized_start=622
+  _globals['_MESSAGINGRESP']._serialized_end=637
+  _globals['_SIDEWATCHMETA']._serialized_start=639
+  _globals['_SIDEWATCHMETA']._serialized_end=712
+  _globals['_FEEDWATCHMESSAGE']._serialized_start=714
+  _globals['_FEEDWATCHMESSAGE']._serialized_end=817
+  _globals['_APPMETA']._serialized_start=819
+  _globals['_APPMETA']._serialized_end=944
+  _globals['_APPMETA_LABELSENTRY']._serialized_start=899
+  _globals['_APPMETA_LABELSENTRY']._serialized_end=944
+  _globals['_REPOSITORY']._serialized_start=946
+  _globals['_REPOSITORY']._serialized_end=972
+  _globals['_REPOSITORYSPEC']._serialized_start=974
+  _globals['_REPOSITORYSPEC']._serialized_end=1004
+  _globals['_FILEMETA']._serialized_start=1007
+  _globals['_FILEMETA']._serialized_end=1294
+  _globals['_PULLAPPFILEMETAREQ']._serialized_start=1297
+  _globals['_PULLAPPFILEMETAREQ']._serialized_end=1435
+  _globals['_PULLAPPFILEMETARESP']._serialized_start=1438
+  _globals['_PULLAPPFILEMETARESP']._serialized_end=1648
+  _globals['_GETDOWNLOADURLREQ']._serialized_start=1650
+  _globals['_GETDOWNLOADURLREQ']._serialized_end=1776
+  _globals['_GETDOWNLOADURLRESP']._serialized_start=1778
+  _globals['_GETDOWNLOADURLRESP']._serialized_end=1811
+  _globals['_APP']._serialized_start=1813
+  _globals['_APP']._serialized_end=1901
+  _globals['_LISTAPPSREQ']._serialized_start=1903
+  _globals['_LISTAPPSREQ']._serialized_end=1947
+  _globals['_LISTAPPSRESP']._serialized_start=1949
+  _globals['_LISTAPPSRESP']._serialized_end=1988
+  _globals['_PULLKVMETAREQ']._serialized_start=1990
+  _globals['_PULLKVMETAREQ']._serialized_end=2069
+  _globals['_PULLKVMETARESP']._serialized_start=2071
+  _globals['_PULLKVMETARESP']._serialized_end=2139
+  _globals['_KVMETA']._serialized_start=2142
+  _globals['_KVMETA']._serialized_end=2305
+  _globals['_GETKVVALUEREQ']._serialized_start=2307
+  _globals['_GETKVVALUEREQ']._serialized_end=2384
+  _globals['_GETKVVALUERESP']._serialized_start=2386
+  _globals['_GETKVVALUERESP']._serialized_end=2434
+  _globals['_UPSTREAM']._serialized_start=2437
+  _globals['_UPSTREAM']._serialized_end=2938
 # @@protoc_insertion_point(module_scope)

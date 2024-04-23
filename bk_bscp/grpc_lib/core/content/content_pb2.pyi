@@ -18,24 +18,28 @@ class Content(_message.Message):
     def __init__(self, id: _Optional[int] = ..., spec: _Optional[_Union[ContentSpec, _Mapping]] = ..., attachment: _Optional[_Union[ContentAttachment, _Mapping]] = ..., revision: _Optional[_Union[_base_pb2.CreatedRevision, _Mapping]] = ...) -> None: ...
 
 class ContentSpec(_message.Message):
-    __slots__ = ("signature", "byte_size")
+    __slots__ = ("signature", "byte_size", "md5")
     SIGNATURE_FIELD_NUMBER: _ClassVar[int]
     BYTE_SIZE_FIELD_NUMBER: _ClassVar[int]
+    MD5_FIELD_NUMBER: _ClassVar[int]
     signature: str
     byte_size: int
-    def __init__(self, signature: _Optional[str] = ..., byte_size: _Optional[int] = ...) -> None: ...
+    md5: str
+    def __init__(self, signature: _Optional[str] = ..., byte_size: _Optional[int] = ..., md5: _Optional[str] = ...) -> None: ...
 
 class ReleasedContentSpec(_message.Message):
-    __slots__ = ("signature", "byte_size", "origin_signature", "origin_byte_size")
+    __slots__ = ("signature", "byte_size", "origin_signature", "origin_byte_size", "md5")
     SIGNATURE_FIELD_NUMBER: _ClassVar[int]
     BYTE_SIZE_FIELD_NUMBER: _ClassVar[int]
     ORIGIN_SIGNATURE_FIELD_NUMBER: _ClassVar[int]
     ORIGIN_BYTE_SIZE_FIELD_NUMBER: _ClassVar[int]
+    MD5_FIELD_NUMBER: _ClassVar[int]
     signature: str
     byte_size: int
     origin_signature: str
     origin_byte_size: int
-    def __init__(self, signature: _Optional[str] = ..., byte_size: _Optional[int] = ..., origin_signature: _Optional[str] = ..., origin_byte_size: _Optional[int] = ...) -> None: ...
+    md5: str
+    def __init__(self, signature: _Optional[str] = ..., byte_size: _Optional[int] = ..., origin_signature: _Optional[str] = ..., origin_byte_size: _Optional[int] = ..., md5: _Optional[str] = ...) -> None: ...
 
 class ContentAttachment(_message.Message):
     __slots__ = ("biz_id", "app_id", "config_item_id")

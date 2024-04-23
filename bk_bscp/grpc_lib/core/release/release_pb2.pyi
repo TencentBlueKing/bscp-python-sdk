@@ -34,7 +34,7 @@ class ReleaseSpec(_message.Message):
     def __init__(self, name: _Optional[str] = ..., memo: _Optional[str] = ..., deprecated: bool = ..., publish_num: _Optional[int] = ...) -> None: ...
 
 class ReleaseStatus(_message.Message):
-    __slots__ = ("publish_status", "released_groups")
+    __slots__ = ("publish_status", "released_groups", "fully_released")
     class ReleasedGroup(_message.Message):
         __slots__ = ("id", "name", "mode", "old_selector", "new_selector", "uid", "edited")
         ID_FIELD_NUMBER: _ClassVar[int]
@@ -54,9 +54,11 @@ class ReleaseStatus(_message.Message):
         def __init__(self, id: _Optional[int] = ..., name: _Optional[str] = ..., mode: _Optional[str] = ..., old_selector: _Optional[_Union[_struct_pb2.Struct, _Mapping]] = ..., new_selector: _Optional[_Union[_struct_pb2.Struct, _Mapping]] = ..., uid: _Optional[str] = ..., edited: bool = ...) -> None: ...
     PUBLISH_STATUS_FIELD_NUMBER: _ClassVar[int]
     RELEASED_GROUPS_FIELD_NUMBER: _ClassVar[int]
+    FULLY_RELEASED_FIELD_NUMBER: _ClassVar[int]
     publish_status: str
     released_groups: _containers.RepeatedCompositeFieldContainer[ReleaseStatus.ReleasedGroup]
-    def __init__(self, publish_status: _Optional[str] = ..., released_groups: _Optional[_Iterable[_Union[ReleaseStatus.ReleasedGroup, _Mapping]]] = ...) -> None: ...
+    fully_released: bool
+    def __init__(self, publish_status: _Optional[str] = ..., released_groups: _Optional[_Iterable[_Union[ReleaseStatus.ReleasedGroup, _Mapping]]] = ..., fully_released: bool = ...) -> None: ...
 
 class ReleaseAttachment(_message.Message):
     __slots__ = ("biz_id", "app_id")

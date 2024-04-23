@@ -14,9 +14,10 @@ _sym_db = _symbol_database.Default()
 
 from bk_bscp.grpc_lib.core.base import base_pb2 as pkg_dot_protocol_dot_core_dot_base_dot_base__pb2
 from bk_bscp.grpc_lib.core.kv import kvs_pb2 as pkg_dot_protocol_dot_core_dot_kv_dot_kvs__pb2
+from bk_bscp.grpc_lib.core.content import content_pb2 as pkg_dot_protocol_dot_core_dot_content_dot_content__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n/pkg/protocol/core/released-kv/released_kv.proto\x12\x05pbrkv\x1a!pkg/protocol/core/base/base.proto\x1a\x1epkg/protocol/core/kv/kvs.proto\"\x94\x01\n\nReleasedKv\x12\n\n\x02id\x18\x01 \x01(\r\x12\x12\n\nrelease_id\x18\x02 \x01(\r\x12\x1a\n\x04spec\x18\x03 \x01(\x0b\x32\x0c.pbkv.KvSpec\x12&\n\nattachment\x18\x04 \x01(\x0b\x32\x12.pbkv.KvAttachment\x12\"\n\x08revision\x18\x05 \x01(\x0b\x32\x10.pbbase.RevisionB]Z[github.com/TencentBlueKing/bk-bcs/bcs-services/bcs-bscp/pkg/protocol/core/released-kv;pbrkvb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n/pkg/protocol/core/released-kv/released_kv.proto\x12\x05pbrkv\x1a!pkg/protocol/core/base/base.proto\x1a\x1epkg/protocol/core/kv/kvs.proto\x1a\'pkg/protocol/core/content/content.proto\"\xc2\x01\n\nReleasedKv\x12\n\n\x02id\x18\x01 \x01(\r\x12\x12\n\nrelease_id\x18\x02 \x01(\r\x12\x1a\n\x04spec\x18\x03 \x01(\x0b\x32\x0c.pbkv.KvSpec\x12&\n\nattachment\x18\x04 \x01(\x0b\x32\x12.pbkv.KvAttachment\x12\"\n\x08revision\x18\x05 \x01(\x0b\x32\x10.pbbase.Revision\x12,\n\x0c\x63ontent_spec\x18\x06 \x01(\x0b\x32\x16.pbcontent.ContentSpecB]Z[github.com/TencentBlueKing/bk-bcs/bcs-services/bcs-bscp/pkg/protocol/core/released-kv;pbrkvb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -24,6 +25,6 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'pkg.protocol.core.released_
 if _descriptor._USE_C_DESCRIPTORS == False:
   _globals['DESCRIPTOR']._options = None
   _globals['DESCRIPTOR']._serialized_options = b'Z[github.com/TencentBlueKing/bk-bcs/bcs-services/bcs-bscp/pkg/protocol/core/released-kv;pbrkv'
-  _globals['_RELEASEDKV']._serialized_start=126
-  _globals['_RELEASEDKV']._serialized_end=274
+  _globals['_RELEASEDKV']._serialized_start=167
+  _globals['_RELEASEDKV']._serialized_end=361
 # @@protoc_insertion_point(module_scope)

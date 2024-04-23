@@ -18,18 +18,20 @@ class Hook(_message.Message):
     def __init__(self, id: _Optional[int] = ..., spec: _Optional[_Union[HookSpec, _Mapping]] = ..., attachment: _Optional[_Union[HookAttachment, _Mapping]] = ..., revision: _Optional[_Union[_base_pb2.Revision, _Mapping]] = ...) -> None: ...
 
 class HookSpec(_message.Message):
-    __slots__ = ("name", "type", "tag", "memo", "content")
+    __slots__ = ("name", "type", "tag", "memo", "content", "revision_name")
     NAME_FIELD_NUMBER: _ClassVar[int]
     TYPE_FIELD_NUMBER: _ClassVar[int]
     TAG_FIELD_NUMBER: _ClassVar[int]
     MEMO_FIELD_NUMBER: _ClassVar[int]
     CONTENT_FIELD_NUMBER: _ClassVar[int]
+    REVISION_NAME_FIELD_NUMBER: _ClassVar[int]
     name: str
     type: str
     tag: str
     memo: str
     content: str
-    def __init__(self, name: _Optional[str] = ..., type: _Optional[str] = ..., tag: _Optional[str] = ..., memo: _Optional[str] = ..., content: _Optional[str] = ...) -> None: ...
+    revision_name: str
+    def __init__(self, name: _Optional[str] = ..., type: _Optional[str] = ..., tag: _Optional[str] = ..., memo: _Optional[str] = ..., content: _Optional[str] = ..., revision_name: _Optional[str] = ...) -> None: ...
 
 class HookAttachment(_message.Message):
     __slots__ = ("biz_id",)

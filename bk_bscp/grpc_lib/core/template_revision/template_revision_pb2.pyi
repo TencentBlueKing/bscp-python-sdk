@@ -51,7 +51,7 @@ class TemplateRevisionAttachment(_message.Message):
     def __init__(self, biz_id: _Optional[int] = ..., template_space_id: _Optional[int] = ..., template_id: _Optional[int] = ...) -> None: ...
 
 class TemplateRevisionNamesDetail(_message.Message):
-    __slots__ = ("template_id", "template_name", "latest_template_revision_id", "template_revisions")
+    __slots__ = ("template_id", "template_name", "latest_template_revision_id", "latest_revision_name", "latest_signature", "latest_byte_size", "template_revisions")
     class revision_names(_message.Message):
         __slots__ = ("template_revision_id", "template_revision_name", "template_revision_memo")
         TEMPLATE_REVISION_ID_FIELD_NUMBER: _ClassVar[int]
@@ -64,9 +64,15 @@ class TemplateRevisionNamesDetail(_message.Message):
     TEMPLATE_ID_FIELD_NUMBER: _ClassVar[int]
     TEMPLATE_NAME_FIELD_NUMBER: _ClassVar[int]
     LATEST_TEMPLATE_REVISION_ID_FIELD_NUMBER: _ClassVar[int]
+    LATEST_REVISION_NAME_FIELD_NUMBER: _ClassVar[int]
+    LATEST_SIGNATURE_FIELD_NUMBER: _ClassVar[int]
+    LATEST_BYTE_SIZE_FIELD_NUMBER: _ClassVar[int]
     TEMPLATE_REVISIONS_FIELD_NUMBER: _ClassVar[int]
     template_id: int
     template_name: str
     latest_template_revision_id: int
+    latest_revision_name: str
+    latest_signature: str
+    latest_byte_size: int
     template_revisions: _containers.RepeatedCompositeFieldContainer[TemplateRevisionNamesDetail.revision_names]
-    def __init__(self, template_id: _Optional[int] = ..., template_name: _Optional[str] = ..., latest_template_revision_id: _Optional[int] = ..., template_revisions: _Optional[_Iterable[_Union[TemplateRevisionNamesDetail.revision_names, _Mapping]]] = ...) -> None: ...
+    def __init__(self, template_id: _Optional[int] = ..., template_name: _Optional[str] = ..., latest_template_revision_id: _Optional[int] = ..., latest_revision_name: _Optional[str] = ..., latest_signature: _Optional[str] = ..., latest_byte_size: _Optional[int] = ..., template_revisions: _Optional[_Iterable[_Union[TemplateRevisionNamesDetail.revision_names, _Mapping]]] = ...) -> None: ...
