@@ -16,6 +16,8 @@
 from dataclasses import dataclass
 from typing import Any, Dict, List
 
+from bk_bscp.utils import dict_to_dataclass
+
 
 @dataclass
 class WatchAppInputParams:
@@ -41,6 +43,7 @@ class KeyRevisionInfo:
     kv_type: str
     kv_attachment: Dict
     revision: Dict
+    content_spec: Dict[str, Any]
 
 
 @dataclass
@@ -59,7 +62,7 @@ class KeyValueUpdatedEvent:
             app=payload["app"],
             app_id=payload["appID"],
             release_id=payload["releaseID"],
-            key_infos=[KeyRevisionInfo(**d) for d in payload["kvMetas"]],
+            key_infos=[dict_to_dataclass(d, KeyRevisionInfo) for d in payload["kvMetas"]],
         )
 
 

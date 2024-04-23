@@ -71,3 +71,11 @@ class InvalidArgument(_message.Message):
     field: str
     message: str
     def __init__(self, field: _Optional[str] = ..., message: _Optional[str] = ...) -> None: ...
+
+class ErrDetails(_message.Message):
+    __slots__ = ("PrimaryError", "SecondaryError")
+    PRIMARYERROR_FIELD_NUMBER: _ClassVar[int]
+    SECONDARYERROR_FIELD_NUMBER: _ClassVar[int]
+    PrimaryError: int
+    SecondaryError: int
+    def __init__(self, PrimaryError: _Optional[int] = ..., SecondaryError: _Optional[int] = ...) -> None: ...

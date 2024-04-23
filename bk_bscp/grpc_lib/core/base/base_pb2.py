@@ -14,7 +14,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n!pkg/protocol/core/base/base.proto\x12\x06pbbase\"R\n\x08Revision\x12\x0f\n\x07\x63reator\x18\x01 \x01(\t\x12\x0f\n\x07reviser\x18\x02 \x01(\t\x12\x11\n\tcreate_at\x18\x03 \x01(\t\x12\x11\n\tupdate_at\x18\x04 \x01(\t\"5\n\x0f\x43reatedRevision\x12\x0f\n\x07\x63reator\x18\x01 \x01(\t\x12\x11\n\tcreate_at\x18\x02 \x01(\t\"T\n\x08\x42\x61sePage\x12\r\n\x05\x63ount\x18\x01 \x01(\x08\x12\r\n\x05start\x18\x02 \x01(\r\x12\r\n\x05limit\x18\x03 \x01(\r\x12\x0c\n\x04sort\x18\x04 \x01(\t\x12\r\n\x05order\x18\x05 \x01(\t\"\n\n\x08\x45mptyReq\"\x0b\n\tEmptyResp\")\n\x08\x42\x61seResp\x12\x0c\n\x04\x63ode\x18\x01 \x01(\x05\x12\x0f\n\x07message\x18\x02 \x01(\t\"9\n\nVersioning\x12\r\n\x05Major\x18\x01 \x01(\r\x12\r\n\x05Minor\x18\x02 \x01(\r\x12\r\n\x05Patch\x18\x03 \x01(\r\"1\n\x0fInvalidArgument\x12\r\n\x05\x66ield\x18\x01 \x01(\t\x12\x0f\n\x07message\x18\x02 \x01(\tBWZUgithub.com/TencentBlueKing/bk-bcs/bcs-services/bcs-bscp/pkg/protocol/core/base;pbbaseb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n!pkg/protocol/core/base/base.proto\x12\x06pbbase\"R\n\x08Revision\x12\x0f\n\x07\x63reator\x18\x01 \x01(\t\x12\x0f\n\x07reviser\x18\x02 \x01(\t\x12\x11\n\tcreate_at\x18\x03 \x01(\t\x12\x11\n\tupdate_at\x18\x04 \x01(\t\"5\n\x0f\x43reatedRevision\x12\x0f\n\x07\x63reator\x18\x01 \x01(\t\x12\x11\n\tcreate_at\x18\x02 \x01(\t\"T\n\x08\x42\x61sePage\x12\r\n\x05\x63ount\x18\x01 \x01(\x08\x12\r\n\x05start\x18\x02 \x01(\r\x12\r\n\x05limit\x18\x03 \x01(\r\x12\x0c\n\x04sort\x18\x04 \x01(\t\x12\r\n\x05order\x18\x05 \x01(\t\"\n\n\x08\x45mptyReq\"\x0b\n\tEmptyResp\")\n\x08\x42\x61seResp\x12\x0c\n\x04\x63ode\x18\x01 \x01(\x05\x12\x0f\n\x07message\x18\x02 \x01(\t\"9\n\nVersioning\x12\r\n\x05Major\x18\x01 \x01(\r\x12\r\n\x05Minor\x18\x02 \x01(\r\x12\r\n\x05Patch\x18\x03 \x01(\r\"1\n\x0fInvalidArgument\x12\r\n\x05\x66ield\x18\x01 \x01(\t\x12\x0f\n\x07message\x18\x02 \x01(\t\":\n\nErrDetails\x12\x14\n\x0cPrimaryError\x18\x01 \x01(\r\x12\x16\n\x0eSecondaryError\x18\x02 \x01(\rBWZUgithub.com/TencentBlueKing/bk-bcs/bcs-services/bcs-bscp/pkg/protocol/core/base;pbbaseb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -38,4 +38,6 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _globals['_VERSIONING']._serialized_end=395
   _globals['_INVALIDARGUMENT']._serialized_start=397
   _globals['_INVALIDARGUMENT']._serialized_end=446
+  _globals['_ERRDETAILS']._serialized_start=448
+  _globals['_ERRDETAILS']._serialized_end=506
 # @@protoc_insertion_point(module_scope)
