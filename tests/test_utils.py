@@ -13,9 +13,43 @@
 #
 # We undertake not to change the open source license (MIT license) applicable
 # to the current version of the project delivered to anyone in the future.
-from bk_bscp.utils import get_fingerprint
+from dataclasses import dataclass
+
+import pytest
+
+from bk_bscp.utils import dict_to_dataclass, get_fingerprint
 
 
 def test_get_fingerprint_basic():
     val = get_fingerprint()
     assert isinstance(val, str)
+
+
+@dataclass
+class Foo:
+    """A simple dataclass for testing."""
+
+    name: str
+    value: int
+
+
+class Test__dict_to_dataclass:
+    @pytest.mark.parametrize(
+        ("data",),
+        [
+            ({"name": "foo", "value": 1},),
+            # data has extra keys
+            ({"name": "foo", "value": 1, "bar": "foobar"},),
+        ],
+    )
+    def test_normal_cases(self, data):
+        foo = dict_to_dataclass(data, Foo)
+        assert foo.name == "foo"
+        assert foo.value == 1
+
+    def test_type_error(self):
+        class NotADataclass:
+            """Not a dataclass."""
+
+        with pytest.raises(TypeError):
+            _ = dict_to_dataclass({"bar": 1}, NotADataclass)
