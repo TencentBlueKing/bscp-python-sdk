@@ -31,14 +31,14 @@ def get_key_with_labels():
     """Get a key with labels specified."""
     #
     # Method 1: set labels when initializing the client.
-    with BscpClient(SERVER_ADDRS, TOKEN, BIZ_ID, labels={"region": "beijing", "env": "prod"}) as client:
+    with BscpClient(SERVER_ADDRS, TOKEN, BIZ_ID, labels={"region": "shenzhen", "env": "stag"}) as client:
         pair = client.get("app1", "key1")
         print(pair)
 
         # Method 2: set labels when calling the get method, the labels will overwrite
         # the client's labels if they have the same key.
         #
-        # client.get("app1", "key1", labels={"env": "stag"})
+        # client.get("app1", "key1", labels={"env": "prod"})
 
 
 def main():
