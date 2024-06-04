@@ -21,10 +21,28 @@ TOKEN = "your_token"
 BIZ_ID = 1
 
 
-def main():
+def get_key():
     with BscpClient(SERVER_ADDRS, TOKEN, BIZ_ID) as client:
         pair = client.get("app1", "key1")
         print(pair)
+
+
+def get_key_with_labels():
+    """Get a key with labels specified."""
+    #
+    # Method 1: set labels when initializing the client.
+    with BscpClient(SERVER_ADDRS, TOKEN, BIZ_ID, labels={"region": "shenzhen", "env": "stag"}) as client:
+        pair = client.get("app1", "key1")
+        print(pair)
+
+        # Method 2: set labels when calling the get method, the labels will overwrite
+        # the client's labels if they have the same key.
+        #
+        # client.get("app1", "key1", labels={"env": "prod"})
+
+
+def main():
+    get_key()
 
 
 if __name__ == "__main__":
