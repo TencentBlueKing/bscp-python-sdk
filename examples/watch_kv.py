@@ -26,16 +26,14 @@ BIZ_ID = 1
 def watch_app():
     """Watch a single app."""
     with BscpClient(SERVER_ADDRS, TOKEN, BIZ_ID) as client:
-        for ev in client.watch_forever(app="app1", labels={}):
+        for ev in client.watch_forever(app="app1"):
             _print_event_obj(client, ev)
 
 
 def watch_apps():
     """Watch multiple apps at once."""
     with BscpClient(SERVER_ADDRS, TOKEN, BIZ_ID) as client:
-        for ev in client.watch_apps_forever(
-            WatchedApp(app="app1"), WatchedApp(app="app2")
-        ):
+        for ev in client.watch_apps_forever(WatchedApp(app="app1"), WatchedApp(app="app2")):
             _print_event_obj(client, ev)
 
 
@@ -43,10 +41,29 @@ def watch_apps_without_reconnect():
     """Watch multiple apps at once, do not reconnect on connection errors."""
     with BscpClient(SERVER_ADDRS, TOKEN, BIZ_ID) as client:
         # It also accept an optional "timeout" parameter
-        for ev in client.watch_apps(
-            WatchedApp(app="app1"), WatchedApp(app="app2"), timeout=1
-        ):
+        for ev in client.watch_apps(WatchedApp(app="app1"), WatchedApp(app="app2"), timeout=1):
             _print_event_obj(client, ev)
+
+
+def watch_with_labels():
+    """Examples of watching with labels, there are 3 ways to set labels."""
+    # Method 1: set labels when initializing the client.
+    #
+    with BscpClient(SERVER_ADDRS, TOKEN, BIZ_ID, labels={"region": "shenzhen", "env": "stag"}) as client:
+        # Method 2: set labels when calling the watch/watch_forever method, the labels will overwrite
+        # the client's labels if they have the same key.
+        #
+        for ev in client.watch_forever(app="app1", labels={"env": "prod"}):
+            _print_event_obj(client, ev)
+
+        # Method 3: set labels for each app when calling the watch_apps/watch_apps_forever method.
+        #
+        # for ev in client.watch_apps(
+        #     WatchedApp(app="app1", labels={"env": "prod"}),
+        #     WatchedApp(app="app2", labels={"env": "prod"}),
+        #     timeout=1,
+        # ):
+        #     _print_event_obj(client, ev)
 
 
 def _print_event_obj(client, ev):
