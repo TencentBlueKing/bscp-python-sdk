@@ -13,9 +13,44 @@
 #
 # We undertake not to change the open source license (MIT license) applicable
 # to the current version of the project delivered to anyone in the future.
-from setuptools import setup
+from setuptools import setup, find_packages
+
+about = {}
+with open("readme.md") as f:
+    readme = f.read()
+
+requires = [
+    "grpcio>=1.60.0",
+    "typing-extensions>=4.9.0",
+    "protobuf>=4.25.2",
+]
+
+extras_dev_require = [
+    "grpcio-tools>=1.60.0",
+    "ruff>=0.1.13",
+    "pytest>=7.4.4",
+    "mypy>=0.910",
+]
 
 setup(
-    # Here you can add additional parameters if necessary
-    setup_cfg=True,
+    name="bscp-python-sdk",
+    packages=find_packages(),
+    install_requires=requires,
+    extras_require={
+        "dev": extras_dev_require,
+    },
+    zip_safe=True,
+    version="0.2.0",
+    description="The Python SDK for blueking bscp project.",
+    long_description=readme,
+    long_description_content_type="text/markdown",
+    author="blueking",
+    author_email="blueking@tencent.com",
+    url="https://github.com/TencentBlueKing/bscp-python-sdk",
+    keywords=["python", "bscp"],
+    classifiers=[
+        "Programming Language :: Python :: 3",
+        "License :: OSI Approved :: MIT License",
+    ],
+    python_requires=">=3.8",
 )
