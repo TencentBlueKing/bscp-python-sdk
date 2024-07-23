@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "bk-bscp"
-version = "0.1.0"
+version = "0.2.0"
 description = "The Python SDK for blueking bscp project."
 include = ["bk-bscp/py.typed"]
 readme = "readme.md"
