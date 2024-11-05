@@ -1,4 +1,5 @@
 ## BSCP-PYTHON-SDK
+
 [![license](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat)]()
 
 [中文文档](./readme.md)
@@ -43,7 +44,6 @@ with BscpClient(server_addrs, token, biz_id) as client:
 
 - In this style, the client's connection will be automatically closed, which is suitable for scenarios where the connection is short and the number of operations is small.
 
-
 ### Sample files
 
 For more sample code, please refer to the examples/ directory.
@@ -52,11 +52,13 @@ For more sample code, please refer to the examples/ directory.
 
 Execute unit tests:
 
-    poetry run pytest -s tests/
+```bash
+uv run pytest -s tests/
+```
 
 Some related environment variable configuration items:
 
-```
+```bash
 # Set the log printing level, the default is INFO
 BSCP_LOG_LEVEL=DEBUG
 ```

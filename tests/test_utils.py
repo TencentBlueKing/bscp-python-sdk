@@ -35,11 +35,11 @@ class Foo:
 
 class Test__dict_to_dataclass:
     @pytest.mark.parametrize(
-        ("data",),
+        "data",
         [
-            ({"name": "foo", "value": 1},),
+            {"name": "foo", "value": 1},
             # data has extra keys
-            ({"name": "foo", "value": 1, "bar": "foobar"},),
+            {"name": "foo", "value": 1, "bar": "foobar"},
         ],
     )
     def test_normal_cases(self, data):

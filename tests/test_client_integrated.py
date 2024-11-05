@@ -16,6 +16,7 @@
 """The integrated tests for bk_bscp module, **a real server is required for running
 these tests.**
 """
+
 import os
 from dataclasses import dataclass
 from typing import List
@@ -35,7 +36,7 @@ class ClientConfig:
     biz_id: int
 
 
-@pytest.fixture()
+@pytest.fixture
 def config() -> ClientConfig:
     """Read client configs from environment variables."""
     _server_addrs = os.getenv("BSCP_SERVER_ADDRS")
@@ -48,7 +49,7 @@ def config() -> ClientConfig:
     return ClientConfig(server_addrs=server_addrs, token=token, biz_id=biz_id)
 
 
-@pytest.fixture()
+@pytest.fixture
 def existent_app_key() -> List[str]:
     """An real app and key that exists in the server."""
     app_key = os.getenv("BSCP_EXISTENT_APP_KEY")
