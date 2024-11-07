@@ -1,0 +1,42 @@
+name: lint
+on: [push, pull_request]
+jobs:
+  lint:
+    name: lint
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.8", "3.9", "3.10", "3.11", "3.12", "3.13"]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v3
+
+      - name: Lint
+        if: matrix.python-version != '3.13'
+        # 3.13 以下锁定版本
+        run: |
+          uv sync --frozen
+          uv run ruff check
+
+      - name: Lint 3.13
+        if: matrix.python-version == '3.13'
+        # 3.13 以上安装最新版本
+        run: |
+          uv sync -U
+          uv run ruff check
+
+      - name: Test
+        run: |
+          uv run pytest -s tests/
+
+      - name: Build
+        run: |
+          uv build

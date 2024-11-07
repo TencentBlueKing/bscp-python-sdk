@@ -1,4 +1,5 @@
 ## BSCP-PYTHON-SDK
+
 [![license](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat)]()
 
 [EnglishDocs](./readme_en.md)
@@ -43,7 +44,6 @@ with BscpClient(server_addrs, token, biz_id) as client:
 
 - 在这种风格下，client 的连接会自动关闭，适合短连接，操作次数不多时的场景
 
-
 ### 示例文件
 
 更多示例代码请参考 examples/ 目录。
@@ -52,11 +52,13 @@ with BscpClient(server_addrs, token, biz_id) as client:
 
 执行单元测试：
 
-    poetry run pytest -s tests/
+```bash
+uv run pytest -s tests/
+```
 
 一些相关的环境变量配置项：
 
-```
+```bash
 # 设置日志打印级别，默认为 INFO
 BSCP_LOG_LEVEL=DEBUG
 ```
