@@ -15,6 +15,14 @@ bscp-python-sdk is the Python SDK of the Blue Whale BSCP project. It can help yo
 
 ## Quick Start
 
+### Installation
+
+```bash
+python -m pip install bk-bscp
+```
+
+Tip: Only `Python 3.8+` is supported
+
 ### client object`BscpClient`
 
 Use `BscpClient` to complete the main operations, which supports two different calling styles.

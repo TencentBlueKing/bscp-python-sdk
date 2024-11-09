@@ -15,6 +15,14 @@ bscp-python-sdk 是蓝鲸 BSCP 项目的 Python SDK，它能帮助你轻松访�
 
 ## 使用示例
 
+### 安装
+
+```bash
+python -m pip install bk-bscp
+```
+
+注: 只支持 `Python 3.8+` 版本
+
 ### 客户端对象 `BscpClient`
 
 使用 `BscpClient` 来完成主要操作，其支持两种不同的调用风格。
