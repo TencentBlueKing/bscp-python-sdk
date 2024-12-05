@@ -14,6 +14,7 @@
 # We undertake not to change the open source license (MIT license) applicable
 # to the current version of the project delivered to anyone in the future.
 """The client for bscp feed-server"""
+
 import json
 import logging
 import random
@@ -36,7 +37,7 @@ from bk_bscp.exceptions import (
 )
 from bk_bscp.grpc_lib.core.base import base_pb2
 from bk_bscp.grpc_lib.feed_server import feed_server_pb2, feed_server_pb2_grpc
-from bk_bscp.models import KeyValuePair, KeyValueUpdatedEvent, WatchAppInputParams
+from bk_bscp.models import AppOptions, KeyValuePair, KeyValueUpdatedEvent, Release, WatchAppInputParams
 from bk_bscp.utils import get_fingerprint
 
 logger = logging.getLogger("bk_bscp")
@@ -152,6 +153,41 @@ class BscpClient:
         except grpc.RpcError as e:
             raise BscpClientHandshakeError("Unable to handshake", e) from e
         logger.debug("Handshake success, api_version: %s", response.api_version)
+
+    def pull_kvs(self, app: str, match: List[str], app_options: Optional[AppOptions] = None) -> Release:
+        """Pull key-value Release from the server.
+        :param app: The app name.
+        :param match: The key.
+        :param app_options: the app option params.
+        :return: A kv Release.
+        :raises BscpClientGetError: If get failed.
+        """
+        total_labels = {**self.labels}
+        uid = self._fingerprint
+
+        if app_options is not None:
+            uid = app_options.uid
+            total_labels = {**self.labels, **(app_options.labels or {})}
+
+        msg = feed_server_pb2.PullKvMetaReq(
+            match=match,
+            biz_id=self.biz_id,
+            app_meta=feed_server_pb2.AppMeta(
+                uid=uid,
+                app=app,
+                labels=total_labels,
+            ),
+        )
+        try:
+            response = self.stub.PullKvMeta(msg, metadata=self._get_req_metadata())
+        except grpc.RpcError as e:
+            raise BscpClientGetError(f'Unable to get "{app}" release, details: {e.details()}', e) from e
+
+        r = Release(
+            release_id=response.release_id,
+            kvs=response.kv_metas,
+        )
+        return r
 
     def get(self, app: str, key: str, labels: Optional[dict] = None) -> KeyValuePair:
         """Get a key-value pair from the server.

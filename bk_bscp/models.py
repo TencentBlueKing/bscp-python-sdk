@@ -16,6 +16,7 @@
 from dataclasses import dataclass
 from typing import Any, Dict, List
 
+from bk_bscp.grpc_lib.feed_server import feed_server_pb2
 from bk_bscp.utils import dict_to_dataclass
 
 
@@ -73,3 +74,20 @@ class KeyValuePair:
     key: str
     type: str
     value: Any
+
+
+@dataclass
+class AppOptions:
+    """AppOptions options for app pull and watch"""
+
+    match: List[str]  # Match matches config items
+    labels: Dict[str, str]  # Labels instance labels
+    uid: str  # UID instance unique uid
+
+
+@dataclass
+class Release:
+    """Release info returned by the bscp server."""
+
+    release_id: int
+    kvs: List[feed_server_pb2.KvMeta]
