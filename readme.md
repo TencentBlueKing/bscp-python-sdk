@@ -61,7 +61,7 @@ with BscpClient(server_addrs, token, biz_id) as client:
 安装环境
 
 ```bash
-# 安装版本, 修改{version}为版本好， 如3.18， 如果已经有版本，步骤忽略
+# 安装版本, 修改{version}为版本号， 如3.18， 如果已经有版本，步骤忽略
 uv python install {version}
 
 # 创建环境, 修改{path}为python真实路径

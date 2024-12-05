@@ -166,8 +166,9 @@ class BscpClient:
         uid = self._fingerprint
 
         if app_options is not None:
-            uid = app_options.uid
+            uid = app_options.uid or self._fingerprint
             total_labels = {**self.labels, **(app_options.labels or {})}
+            match = [*match, *(app_options.match or [])]
 
         msg = feed_server_pb2.PullKvMetaReq(
             match=match,

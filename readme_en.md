@@ -61,7 +61,7 @@ For more sample code, please refer to the examples/ directory.
 Installation environment
 
 ```bash
-# Install version, modify {version} to a good version, such as 3.18. If there is already a version, ignore this step
+# Install version, modify {version} to real version, such as 3.18. If there is already a version, ignore this step
 uv python install {version}
 
 # Create environment, modify {path} to the real path of python
