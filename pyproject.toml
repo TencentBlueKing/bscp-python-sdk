@@ -30,8 +30,8 @@ Home = "https://github.com/TencentBlueKing/bscp-python-sdk"
 dev = ["grpcio-tools>=1.60.0", "mypy>=1.9.0", "pytest>=7.4.4", "ruff>=0.7.2"]
 
 [build-system]
-requires = ["setuptools>=61.0.0"]
-build-backend = "setuptools.build_meta"
+requires = ["hatchling"]
+build-backend = "hatchling.build"
 
 [tool.ruff]
 line-length = 119
