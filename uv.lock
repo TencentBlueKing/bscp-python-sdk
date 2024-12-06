@@ -3,7 +3,7 @@ requires-python = ">=3.8"
 
 [[package]]
 name = "bk-bscp"
-version = "0.2.0"
+version = "0.2.2"
 source = { editable = "." }
 dependencies = [
     { name = "grpcio" },

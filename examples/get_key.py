@@ -14,7 +14,8 @@
 # We undertake not to change the open source license (MIT license) applicable
 # to the current version of the project delivered to anyone in the future.
 """Get a key."""
-from bk_bscp.client import BscpClient
+
+from bk_bscp.client import AppOptions, BscpClient
 
 SERVER_ADDRS = ["example.com:9090"]
 TOKEN = "your_token"
@@ -25,6 +26,20 @@ def get_key():
     with BscpClient(SERVER_ADDRS, TOKEN, BIZ_ID) as client:
         pair = client.get("app1", "key1")
         print(pair)
+
+
+def get_all_keys():
+    app = AppOptions(
+        match=[],
+        labels={},
+        uid="",
+    )
+
+    with BscpClient(SERVER_ADDRS, TOKEN, BIZ_ID) as client:
+        release = client.pull_kvs("app1", ["key1"], app)
+        for kv in release.kvs:
+            pair = client.get("app1", kv.key)
+            print(pair)
 
 
 def get_key_with_labels():
@@ -42,7 +57,7 @@ def get_key_with_labels():
 
 
 def main():
-    get_key()
+    get_all_keys()
 
 
 if __name__ == "__main__":
