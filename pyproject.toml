@@ -1,6 +1,6 @@
 [project]
 name = "bk-bscp"
-version = "0.2.2"
+version = "0.3.0"
 description = "The Python SDK for blueking bscp project."
 readme = "readme.md"
 license = { file = "LICENSE.txt" }
